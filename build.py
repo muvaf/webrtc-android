@@ -79,7 +79,7 @@ def run_build(opts, logfile):
     source_dir = os.path.join(opts.dir, ROOT)
     build_opts = []
     if opts.official:
-        build_opts.append('--extra-gn-args=is_official_build=true')
+        build_opts.append('--extra-gn-args=is_official_build=true chrome_pgo_phase=0')
     if opts.unstripped:
         build_opts.append('--use-unstripped-libs')
     run_command(['./tools_webrtc/android/build_aar.py'] + build_opts, logfile, cwd=source_dir)
